@@ -19,9 +19,6 @@ const closeModal = () => {
   modal.classList.add("hidden");
 };
 
-closeButton.addEventListener("click", closeModal);
-modalOverlay.addEventListener("click", closeModal);
-
 cards.forEach((item) => {
   item.addEventListener("click", function (e) {
     let imgSrc = item.querySelector("img").src;
@@ -29,9 +26,12 @@ cards.forEach((item) => {
     let itemTitle = item.querySelector(".item_title").innerText;
     let itemContent = item.querySelector(".item_content").innerText;
     openModal(imgSrc, imgAlt, itemTitle, itemContent);
-    console.log(itemTitle.innerText);
+    console.log(itemTitle.innerText); // 지우기
   });
 });
+
+closeButton.addEventListener("click", closeModal);
+modalOverlay.addEventListener("click", closeModal);
 
 // Side Menu
 const burger = document.querySelector("#burger");
